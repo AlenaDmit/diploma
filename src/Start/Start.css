@@ -1,3 +1,5 @@
-.block {
-    color: red;
+.containerMaps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
