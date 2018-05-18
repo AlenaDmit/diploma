@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Start from './Start/Start';
-import Header from './Header/Header'
-import Footer from './Footer/Footer'
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import './App.css';
 
 class App extends Component {

@@ -24,6 +24,24 @@ const styles = theme => ({
     },
 });
 
+const Maps = [
+    {
+        name: 'Яндекс.Карты',
+        title: 'Яндекс.Карты',
+        desc: 'Один из самых популярных поисково-информационных картографических сервисов, используемых в России'
+    },
+    {
+        name: 'Google Maps',
+        title: 'Google Maps',
+        desc: 'Глобальный картографический сервис, использующийся по всему миру'
+    },
+    {
+        name: '2ГИС',
+        title: '2ГИС',
+        desc: 'Картографический сервис, предоставляющий информацонно-поисковый справочник городов'
+    }
+]
+
 class Start extends Component {
     constructor(props) {
         super(props);
@@ -31,6 +49,14 @@ class Start extends Component {
 
     render() {
         const { classes } = this.props;
+        const maps = Maps.map(maps => (
+            <Card
+              key={maps.name}
+              title={maps.title}
+              desc={maps.desc}
+            />)
+          );
+        const mapsAPI = this
         return (
             <Fragment>
                 <Paper
@@ -41,11 +67,11 @@ class Start extends Component {
                             <CardMedia
                                 className={classes.media}
                                 image={yandexMapsLogo}
-                                title="Яндекс.Карты"
+                                title={maps.name}
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="headline" component="h2">
-                                    Яндекс.Карты
+                                    {maps.name}
                                 </Typography>
                                 <Typography component="p">
                                     Один из самых популярных поисково-информационных картографических сервисов, используемых в России
