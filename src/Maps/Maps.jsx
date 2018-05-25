@@ -2,12 +2,12 @@ import React, { Component, Fragment } from 'react';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
+import Card, { CardActions, CardContent, CardMedia } from '@material-ui/core/Card';
 import yandexMapsLogo from './yandex.jpeg';
 import googleMapsLogo from './google.png';
 import gisMapsLogo from './2gis.jpg';
 import mapsStyles from './Maps.css';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
     root: theme.mixins.gutters({
@@ -82,7 +82,7 @@ class Maps extends Component {
                     <Typography
                         variant="headline"
                         component="h3">
-                        Пройдите тест :)
+                        Пройдите тест :
                     </Typography>
                     <Button
                         variant="raised" color="secondary">
@@ -90,8 +90,12 @@ class Maps extends Component {
                     </Button>
                 </Paper>
             </Fragment>
-        )
+        );
     }
 }
+
+Maps.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
 
 export default withStyles(styles)(Maps);
